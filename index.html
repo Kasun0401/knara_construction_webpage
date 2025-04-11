@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konara Construction</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FFA500',
+            secondary: '#4B5563',
+            accent: '#F59E0B',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
+  <!-- Lightbox2 for Image Gallery -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .hero-pattern {
+      background-image: url('https://images.unsplash.com/photo-1621947081720-86970823b77a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .gallery-img {
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .contact-section {
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                  url('https://images.unsplash.com/photo-1621947081720-86970823b77a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .social-icon {
+      transition: all 0.3s;
+    }
+    
+    .social-icon:hover {
+      transform: scale(1.2);
+    }
+    
+    @media (max-width: 768px) {
+      .hero-text {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <!-- Header/Navigation -->
+  <header class="fixed w-full z-50 bg-white bg-opacity-95 shadow-md transition-all duration-300">
+    <div class="container mx-auto px-4 py-3">
+      <nav class="flex items-center justify-between">
+        <a href="#" class="text-2xl font-bold text-primary flex items-center">
+          <i class="fas fa-hard-hat mr-2"></i>
+          <span>Konara Construction</span>
+        </a>
+        
+        <!-- Mobile Menu Button -->
+        <div class="block lg:hidden">
+          <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <ul class="hidden lg:flex space-x-8">
+          <li><a href="#" class="text-gray-800 hover:text-primary transition-colors">Home</a></li>
+          <li><a href="#about" class="text-gray-800 hover:text-primary transition-colors">About</a></li>
+          <li><a href="#services" class="text-gray-800 hover:text-primary transition-colors">Services</a></li>
+          <li><a href="#gallery" class="text-gray-800 hover:text-primary transition-colors">Gallery</a></li>
+          <li><a href="#contact" class="text-gray-800 hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+        
+        <a href="#contact" class="hidden lg:inline-block bg-primary hover:bg-amber-600 text-white py-2 px-5 rounded-full transition-colors">
+          Get a Quote
+        </a>
+      </nav>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-white w-full py-4 px-6 shadow-md lg:hidden">
+      <ul class="space-y-4">
+        <li><a href="#" class="block text-gray-800 hover:text-primary">Home</a></li>
+        <li><a href="#about" class="block text-gray-800 hover:text-primary">About</a></li>
+        <li><a href="#services" class="block text-gray-800 hover:text-primary">Services</a></li>
+        <li><a href="#gallery" class="block text-gray-800 hover:text-primary">Gallery</a></li>
+        <li><a href="#contact" class="block text-gray-800 hover:text-primary">Contact</a></li>
+        <li class="pt-2">
+          <a href="#contact" class="inline-block w-full text-center bg-primary hover:bg-amber-600 text-white py-2 px-5 rounded-full transition-colors">
+            Get a Quote
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="bg-pattern absolute inset-0">
+        <!-- Animated tiles/particles -->
+        <div id="animatedBackground" class="absolute inset-0"></div>
+        <!-- Overlay to improve text readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      </div>
+    </div>
+    
+    <div class="container mx-auto px-4 z-10 text-center" data-aos="fade-up" data-aos-duration="1000">
+      <div class="bg-black bg-opacity-70 p-8 rounded-2xl max-w-4xl mx-auto hero-text">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
+          Konara Construction වෙතින් උසස්ම තත්වයේ ඉන්ටර්ලොක් සේවාවන්
+        </h1>
+        <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          ඔබගේ පරිශ්‍රය අලංකාර කරන, දිගුකාලීන, අති උසස් තත්ත්වයේ ඉන්ටර්ලොක් විසඳුම්
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#services" class="bg-primary hover:bg-amber-600 text-white px-8 py-3 rounded-full transition-colors shadow-lg flex items-center justify-center">
+            <i class="fas fa-tools mr-2"></i> අපගේ සේවාවන්
+          </a>
+          <a href="#contact" class="bg-white hover:bg-gray-100 text-gray-800 px-8 py-3 rounded-full transition-colors shadow-lg flex items-center justify-center">
+            <i class="fas fa-phone-alt mr-2"></i> නොමිලේ මිල ගණන් සඳහා අමතන්න
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-6 left-0 right-0 text-center">
+      <a href="#about" class="text-white animate-bounce inline-block">
+        <i class="fas fa-chevron-down text-3xl"></i>
+      </a>
+    </div>
+  
+    <!-- Add CSS for animations -->
+    <style>
+      .bg-pattern {
+        background-color: #1e293b;
+      }
+      
+      .animated-tile {
+        position: absolute;
+        background-color: #f59e0b;
+        opacity: 0.2;
+        border-radius: 5px;
+        transform: rotate(45deg);
+      }
+    </style>
+  
+    <!-- Add JavaScript for the animated background -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('animatedBackground');
+        const colors = ['#f59e0b', '#e5e7eb', '#d97706', '#fbbf24'];
+        const numTiles = window.innerWidth < 768 ? 25 : 50;
+        
+        // Create animated tiles
+        for (let i = 0; i < numTiles; i++) {
+          createAnimatedTile(container, colors);
+        }
+        
+        // Function to create a single animated tile
+        function createAnimatedTile(container, colors) {
+          const tile = document.createElement('div');
+          tile.classList.add('animated-tile');
+          
+          // Random positioning
+          const size = Math.random() * 60 + 20; // 20-80px
+          const posX = Math.random() * 100;
+          const posY = Math.random() * 100;
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          const delay = Math.random() * 5;
+          const duration = Math.random() * 10 + 10; // 10-20s
+          
+          // Set styles
+          tile.style.width = `${size}px`;
+          tile.style.height = `${size}px`;
+          tile.style.left = `${posX}%`;
+          tile.style.top = `${posY}%`;
+          tile.style.backgroundColor = color;
+          
+          // Set animation
+          tile.style.animation = `float ${duration}s infinite ease-in-out ${delay}s`;
+          
+          // Add to container
+          container.appendChild(tile);
+        }
+        
+        // Add keyframe animation
+        const styleSheet = document.createElement('style');
+        styleSheet.innerHTML = `
+          @keyframes float {
+            0% {
+              transform: translate(0, 0) rotate(45deg) scale(1);
+              opacity: 0;
+            }
+            50% {
+              transform: translate(${Math.random() > 0.5 ? '+' : '-'}${Math.random() * 100}px, ${Math.random() > 0.5 ? '+' : '-'}${Math.random() * 100}px) rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 1});
+              opacity: 0.3;
+            }
+            100% {
+              transform: translate(0, 0) rotate(45deg) scale(1);
+              opacity: 0;
+            }
+          }
+        `;
+        document.head.appendChild(styleSheet);
+      });
+    </script>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-20 px-4">
+    <div class="container mx-auto">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+          <div class="relative">
+            <img src="images\477445883_969733505124816_5016617942117429171_n.jpg" 
+                 alt="Interlock Paving" 
+                 class="rounded-lg shadow-xl w-full h-auto">
+            <div class="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-lg hidden md:block">
+              <p class="text-2xl font-bold">10+</p>
+              <p>Years Experience</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800 relative inline-block">
+              අපි ගැන
+              <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary"></span>
+            </h2>
+            
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Konara Cement Product & Construction යනු ශ්‍රී ලංකාවේ විශ්වාසවන්තතම ඉන්ටර්ලොක් සේවා සැපයුම්කරුවෙකි. 
+              වසර ගණනාවක් පුරා අපි දැක්ම, විශ්වාසය සහ උසස්ම තත්ත්වය පදනම් කරගෙන 
+              Driveways, Garden Paths, Patios සහ වඩාත්ම තත්වයෙන් ඉහළ ඉන්ටර්ලොක් විසඳුම් සපයමින් සිටී.
+            </p>
+            
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+              අපි දිවයින පුරා සේවය සපයන අතර, විශේෂයෙන් කුරුණෑගල නගරය 
+              (සහ ඒ අවට මාවතගම, වාරියපොල, පොල්ගහවෙල, ඉබ්බාගමුව වැනි ප්‍රදේශ), 
+              කොළඹ, ගම්පහ, කළුතර, මහනුවර, ගාල්ල ඇතුළු අනෙකුත් ප්‍රධාන නගර සහ 
+              ඒවායේ ආසන්න ප්‍රදේශ ද ආවරණය කරමු. 
+              පළපුරුදු කණ්ඩායමක් සමඟින්, ඔබේ නිවස හෝ ව්‍යාපාරික අවශ්‍යතාවය සඳහා අලංකාර, දිගුකාලීන 
+              Interlock විසඳුමක් ලබාදීමට අපි කැපවෙමු.
+            </p>
+            
+            <div class="flex flex-wrap gap-6">
+              <div class="flex items-center">
+                <div class="bg-primary bg-opacity-20 p-3 rounded-full">
+                  <i class="fas fa-check text-primary text-xl"></i>
+                </div>
+                <span class="ml-3 text-gray-700">High Quality</span>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="bg-primary bg-opacity-20 p-3 rounded-full">
+                  <i class="fas fa-clock text-primary text-xl"></i>
+                </div>
+                <span class="ml-3 text-gray-700">On Time</span>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="bg-primary bg-opacity-20 p-3 rounded-full">
+                  <i class="fas fa-shield-alt text-primary text-xl"></i>
+                </div>
+                <span class="ml-3 text-gray-700">Guaranteed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why Choose Us -->
+  <section class="py-16 px-4 bg-gray-100">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">
+        මොකද ඔබ අපව තෝරා ගන්නේ?
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-medal text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">උසස් තත්ත්වය</h3>
+          <p class="text-gray-600 text-center">ඉහළම ගුණාත්මක භාවයෙන් යුත් ඉන්ටර්ලොක් ගල් සහ නිමාවන්.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-users text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">පළපුරුදු කණ්ඩායම</h3>
+          <p class="text-gray-600 text-center">වසර ගණනාවක පළපුරුද්දක් සහිත පුහුණු ශ්‍රමිකයින්.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-hand-holding-usd text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">තරඟකාරී මිල</h3>
+          <p class="text-gray-600 text-center">වෙළඳපොලේ දැරිය හැකි හා තරඟකාරී මිල ගණන්.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="400">
+          <div class="bg-primary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i class="fas fa-thumbs-up text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">සතුටුදායක ප්‍රතිඵල</h3>
+          <p class="text-gray-600 text-center">ඔබගේ සම්පූර්ණ තෘප්තිය සහතික කරන නිමාවන්.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-4">
+    <div class="container mx-auto">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">අපේ සේවාවන්</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          ඉහළම ගුණාත්මක භාවයෙන් යුත් ඉන්ටර්ලොක් සේවාවන් සපයමින් ඔබේ භූමිය පරිවර්තනය කරන්න.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <img src="images\486356910_1002095875221912_531920956288456416_n.jpg" 
+               alt="Driveway Paving" 
+               class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Driveway Paving</h3>
+            <p class="text-gray-600 mb-4">වාහන පාරවල් සඳහා ශක්තිමත්, දිරවා හැකි Interlock විසඳුම්.</p>
+            <a href="#contact" class="text-primary font-medium hover:text-amber-600 flex items-center">
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <img src="images\486511035_1002095865221913_3978082424739249526_n.jpg" 
+               alt="Garden Paths" 
+               class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Garden Paths / Walkways / Steps</h3>
+            <p class="text-gray-600 mb-4">ගෙවතු මාවත්, පියගැට සහ අලංකාර ඇවිදිම් මාර්ග.</p>
+            <a href="#contact" class="text-primary font-medium hover:text-amber-600 flex items-center">
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="300">
+          <img src="images\486424481_1000189492079217_162513024841111913_n.jpg" 
+               alt="Patios" 
+               class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Patios / Outdoor Areas</h3>
+            <p class="text-gray-600 mb-4">ඔබේ එළිමහන් අවකාශය සඳහා සුන්දර හා කල් පවතින paving.</p>
+            <a href="#contact" class="text-primary font-medium hover:text-amber-600 flex items-center">
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="400">
+          <img src="images\486871431_1003298908434942_9186416824979199533_n.jpg" 
+               alt="Interlock Stones" 
+               class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Interlock ගල් සැපයීම</h3>
+            <p class="text-gray-600 mb-4">විවිධ වර්ගවල paving stones සැපයීම.</p>
+            <a href="#contact" class="text-primary font-medium hover:text-amber-600 flex items-center">
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="500">
+          <img src="images\488729417_1008594774572022_5589735764531681590_n.jpg" 
+               alt="Installation Service" 
+               class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Installation Service</h3>
+            <p class="text-gray-600 mb-4">Interlock ගල් වෘත්තීයමය ලෙස සවිකිරීම.</p>
+            <a href="#contact" class="text-primary font-medium hover:text-amber-600 flex items-center">
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="600">
+          <img src="images\486690313_1003299045101595_5444546559440649915_n.jpg" 
+               alt="Repair & Maintenance" 
+               class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Repair / Maintenance</h3>
+            <p class="text-gray-600 mb-4">අලුත්වැඩියා සහ නඩත්තු සේවා.</p>
+            <a href="#contact" class="text-primary font-medium hover:text-amber-600 flex items-center">
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Process Section -->
+  <section class="py-16 px-4 bg-gray-100">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">
+        අපි කටයුතු කරන ආකාරය
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="relative" data-aos="fade-right" data-aos-delay="100">
+          <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition text-center relative z-10">
+            <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">
+              1
+            </div>
+            <h3 class="text-xl font-semibold mb-3">සාකච්ඡාව</h3>
+            <p class="text-gray-600">ඔබේ අවශ්‍යතා සහ අපේක්ෂා ගැන සාකච්ඡා කිරීම.</p>
+          </div>
+          <div class="absolute top-1/2 left-full w-full hidden lg:block" style="height: 2px; background-color: #FFA500; transform: translateY(-50%);"></div>
+        </div>
+        
+        <div class="relative" data-aos="fade-right" data-aos-delay="200">
+          <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition text-center relative z-10">
+            <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">
+              2
+            </div>
+            <h3 class="text-xl font-semibold mb-3">මිල ගණන්</h3>
+            <p class="text-gray-600">නොමිලේ මිල ගණන් හා වියදම් ඇස්තමේන්තු.</p>
+          </div>
+          <div class="absolute top-1/2 left-full w-full hidden lg:block" style="height: 2px; background-color: #FFA500; transform: translateY(-50%);"></div>
+        </div>
+        
+        <div class="relative" data-aos="fade-right" data-aos-delay="300">
+          <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition text-center relative z-10">
+            <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">
+              3
+            </div>
+            <h3 class="text-xl font-semibold mb-3">සැලසුම්</h3>
+            <p class="text-gray-600">ඔබේ අනුමැතිය සඳහා නිර්මාණය හා සැලසුම් සකස් කිරීම.</p>
+          </div>
+          <div class="absolute top-1/2 left-full w-full hidden lg:block" style="height: 2px; background-color: #FFA500; transform: translateY(-50%);"></div>
+        </div>
+        
+        <div class="relative" data-aos="fade-right" data-aos-delay="400">
+          <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition text-center relative z-10">
+            <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mb-4 mx-auto">
+              4
+            </div>
+            <h3 class="text-xl font-semibold mb-3">ඉදිකිරීම්
+            <h3 class="text-xl font-semibold mb-3">ක්‍රියාත්මක කිරීම</h3>
+            <p class="text-gray-600">ප්‍රමිතියෙන් ඉහළ ඉදිකිරීම් සහ ස්ථාපනය කිරීම.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">
+        අපගේ සතුටුදායක සේවාදායකයින්
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="ml-2 text-gray-600">5.0</p>
+          </div>
+          <p class="text-gray-700 italic mb-6">
+            "කොනාර කන්ස්ට්‍රක්ෂන් විසින් මගේ ගෙදර ඉදිරිපස සම්පූර්ණයෙන්ම වෙනස් කරනු ලැබුවා. ඔවුන්ගේ සේවාව ඉතා උසස් මට්ටමක තිබුණා. මම ඉතා සතුටින් ලබාගත් සේවාව නිර්දේශ කරනවා!"
+          </p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+              <img src="images\16874191.png" alt="Customer" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900">සමන් පෙරේරා</h4>
+              <p class="text-gray-600 text-sm">කොළඹ</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="ml-2 text-gray-600">5.0</p>
+          </div>
+          <p class="text-gray-700 italic mb-6">
+            "කොනාර කන්ස්ට්‍රක්ෂන් වෙතින් මගේ උද්‍යානය සඳහා ලබාගත් ඉන්ටර්ලොක් මාර්ගය ගැන මම ඉතා සතුටුයි. ඔවුන්ගේ වැඩ කාර්යක්ෂම සහ ඉතා විශිෂ්ටයි."
+          </p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+              <img src="images\16874191.png" alt="Customer" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900">කමලා සිල්වා</h4>
+              <p class="text-gray-600 text-sm">ගම්පහ</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex items-center mb-4">
+            <div class="text-yellow-400 flex">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="ml-2 text-gray-600">4.5</p>
+          </div>
+          <p class="text-gray-700 italic mb-6">
+            "මගේ ව්‍යාපාරික ගොඩනැගිල්ලේ පිවිසුම් ප්‍රදේශය සැකසීම සඳහා කොනාර කන්ස්ට්‍රක්ෂන් සමාගම තෝරා ගැනීම ගැන මම සතුටු වෙනවා. ඔවුන්ගේ සේවාව විශිෂ්ටයි."
+          </p>
+          <div class="flex items-center">
+            <div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden mr-4">
+              <img src="images\16874191.png" alt="Customer" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-900">නිමල් ජයතුංග</h4>
+              <p class="text-gray-600 text-sm">කුරුණෑගල</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery Section -->
+  <section id="gallery" class="py-20 px-4 bg-gray-100">
+   <div class="container mx-auto">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">අපගේ වැඩ</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        ඉන්ටර්ලොක් පේවින් ඔස්සේ අපගේ සම්පූර්ණ කරන ලද ව්‍යාපෘති බලන්න.
+      </p>
+    </div>
+    
+    <div id="initial-gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <a href="images/482220096_989262303171936_557136705774275243_n.jpg" data-lightbox="gallery" data-title="Driveway Project" class="block" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/482220096_989262303171936_557136705774275243_n.jpg" alt="Gallery 1" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/482985636_989262409838592_243075504853960744_n.jpg" data-lightbox="gallery" data-title="Garden Pathway" class="block" data-aos="zoom-in" data-aos-delay="150">
+        <img src="images/482985636_989262409838592_243075504853960744_n.jpg" alt="Gallery 2" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/484907206_993972782700888_1911268027804365097_n.jpg" data-lightbox="gallery" data-title="Patio Design" class="block" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/484907206_993972782700888_1911268027804365097_n.jpg" alt="Gallery 3" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486327501_1002095871888579_8548550533367603570_n.jpg" data-lightbox="gallery" data-title="Commercial Project" class="block" data-aos="zoom-in" data-aos-delay="250">
+        <img src="images/486327501_1002095871888579_8548550533367603570_n.jpg" alt="Gallery 4" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486356910_1002095875221912_531920956288456416_n.jpg" data-lightbox="gallery" data-title="Garden Steps" class="block" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/486356910_1002095875221912_531920956288456416_n.jpg" alt="Gallery 5" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486368324_1000189468745886_6378346103159919482_n.jpg" data-lightbox="gallery" data-title="Residential Project" class="block" data-aos="zoom-in" data-aos-delay="350">
+        <img src="images/486368324_1000189468745886_6378346103159919482_n.jpg" alt="Gallery 6" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486385798_1003298938434939_3078117009816662558_n.jpg" data-lightbox="gallery" data-title="Interlock Design" class="block" data-aos="zoom-in" data-aos-delay="400">
+        <img src="images/486385798_1003298938434939_3078117009816662558_n.jpg" alt="Gallery 7" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486424481_1000189492079217_162513024841111913_n.jpg" data-lightbox="gallery" data-title="Modern Design" class="block" data-aos="zoom-in" data-aos-delay="450">
+        <img src="images/486424481_1000189492079217_162513024841111913_n.jpg" alt="Gallery 8" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+    </div>
+    
+    <!-- First set of additional gallery images (initially hidden) -->
+    <div id="additional-gallery-1" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 hidden">
+      <a href="images/486500793_1002095838555249_3678644445229796136_n.jpg" data-lightbox="gallery" data-title="Additional Project 1" class="block" data-aos="zoom-in">
+        <img src="images/486500793_1002095838555249_3678644445229796136_n.jpg" alt="Additional Gallery 1" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486511035_1002095865221913_3978082424739249526_n.jpg" data-lightbox="gallery" data-title="Additional Project 2" class="block" data-aos="zoom-in">
+        <img src="images/486511035_1002095865221913_3978082424739249526_n.jpg" alt="Additional Gallery 2" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486558865_1002095888555244_5883403654461312172_n.jpg" data-lightbox="gallery" data-title="Additional Project 3" class="block" data-aos="zoom-in">
+        <img src="images/486558865_1002095888555244_5883403654461312172_n.jpg" alt="Additional Gallery 3" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486950756_1002095458555287_3183585777458997406_n.jpg" data-lightbox="gallery" data-title="Additional Project 4" class="block" data-aos="zoom-in">
+        <img src="images/486950756_1002095458555287_3183585777458997406_n.jpg" alt="Additional Gallery 4" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/486960859_1004120825019417_9202583526704174838_n.jpg" data-lightbox="gallery" data-title="Additional Project 5" class="block" data-aos="zoom-in">
+        <img src="images/486960859_1004120825019417_9202583526704174838_n.jpg" alt="Additional Gallery 5" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/487108165_1004120935019406_1694072650735140882_n.jpg" data-lightbox="gallery" data-title="Additional Project 6" class="block" data-aos="zoom-in">
+        <img src="images/487108165_1004120935019406_1694072650735140882_n.jpg" alt="Additional Gallery 6" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/487121242_1002095895221910_7519363435017786577_n.jpg" data-lightbox="gallery" data-title="Additional Project 7" class="block" data-aos="zoom-in">
+        <img src="images/487121242_1002095895221910_7519363435017786577_n.jpg" alt="Additional Gallery 7" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images/487202967_1004120798352753_4182774625445136957_n.jpg" data-lightbox="gallery" data-title="Additional Project 8" class="block" data-aos="zoom-in">
+        <img src="images/487202967_1004120798352753_4182774625445136957_n.jpg" alt="Additional Gallery 8" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+    </div>
+    
+    <!-- Second set of additional gallery images (initially hidden) -->
+    <div id="additional-gallery-2" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 hidden">
+      <a href="images\487206796_1002095835221916_8977966905848918412_n.jpg" data-lightbox="gallery" data-title="Extra Project 1" class="block" data-aos="zoom-in">
+        <img src="images\487206796_1002095835221916_8977966905848918412_n.jpg" alt="Extra Gallery 1" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images\487287116_1002095858555247_1098855676351777960_n.jpg" data-lightbox="gallery" data-title="Extra Project 2" class="block" data-aos="zoom-in">
+        <img src="images\487287116_1002095858555247_1098855676351777960_n.jpg" alt="Extra Gallery 2" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images\487306151_1004120835019416_7781064921886798438_n.jpg" data-lightbox="gallery" data-title="Extra Project 3" class="block" data-aos="zoom-in">
+        <img src="images\487306151_1004120835019416_7781064921886798438_n.jpg" alt="Extra Gallery 3" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images\487507058_1008599997904833_1078423916394181754_n.jpg" data-lightbox="gallery" data-title="Extra Project 4" class="block" data-aos="zoom-in">
+        <img src="images\487507058_1008599997904833_1078423916394181754_n.jpg" alt="Extra Gallery 4" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images\488494720_1008591737905659_7679737351592123629_n.jpg" data-lightbox="gallery" data-title="Extra Project 5" class="block" data-aos="zoom-in">
+        <img src="images\488494720_1008591737905659_7679737351592123629_n.jpg" alt="Extra Gallery 5" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images\488501254_1008600227904810_3416486709917507314_n.jpg" data-lightbox="gallery" data-title="Extra Project 6" class="block" data-aos="zoom-in">
+        <img src="images\488501254_1008600227904810_3416486709917507314_n.jpg" alt="Extra Gallery 6" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images\488651397_1008598731238293_6919515021370229372_n.jpg" data-lightbox="gallery" data-title="Extra Project 7" class="block" data-aos="zoom-in">
+        <img src="images\488651397_1008598731238293_6919515021370229372_n.jpg" alt="Extra Gallery 7" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+      <a href="images\488750674_1008599067904926_9037028858637321566_n.jpg" data-lightbox="gallery" data-title="Extra Project 8" class="block" data-aos="zoom-in">
+        <img src="images\488750674_1008599067904926_9037028858637321566_n.jpg" alt="Extra Gallery 8" class="rounded-lg shadow-md hover:shadow-xl transition w-full h-64 object-cover">
+      </a>
+    </div>
+    
+    <div class="text-center mt-10">
+      <button id="view-more-btn" class="inline-block bg-primary hover:bg-amber-600 text-white px-8 py-3 rounded-full transition-colors shadow-lg" data-aos="fade-up">
+        <i class="fas fa-image mr-2"></i> වැඩි ඡායාරූප බලන්න
+      </button>
+    </div>
+   </div>
+  </section>
+
+<!-- Add JavaScript at the end of your body tag -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const viewMoreBtn = document.getElementById('view-more-btn');
+    const additionalGallery1 = document.getElementById('additional-gallery-1');
+    const additionalGallery2 = document.getElementById('additional-gallery-2');
+    let currentState = 0; // 0: initial, 1: first additional gallery shown, 2: second additional gallery shown
+    
+    viewMoreBtn.addEventListener('click', function() {
+      // Cycle through states
+      currentState = (currentState + 1) % 3;
+      
+      // Update UI based on current state
+      if (currentState === 0) {
+        // Hide all additional galleries
+        additionalGallery1.classList.add('hidden');
+        additionalGallery2.classList.add('hidden');
+        viewMoreBtn.innerHTML = '<i class="fas fa-image mr-2"></i> වැඩි ඡායාරූප බලන්න';
+      } else if (currentState === 1) {
+        // Show first additional gallery only
+        additionalGallery1.classList.remove('hidden');
+        additionalGallery2.classList.add('hidden');
+        viewMoreBtn.innerHTML = '<i class="fas fa-image mr-2"></i> තවත් ඡායාරූප බලන්න';
+        
+        // Scroll to the first additional gallery
+        additionalGallery1.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (currentState === 2) {
+        // Show both additional galleries
+        additionalGallery1.classList.remove('hidden');
+        additionalGallery2.classList.remove('hidden');
+        viewMoreBtn.innerHTML = '<i class="fas fa-minus mr-2"></i> ඡායාරූප අඩු කරන්න';
+        
+        // Scroll to the second additional gallery
+        additionalGallery2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      
+      // Reinitialize AOS for new elements
+      if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+      }
+    });
+  });
+</script>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">නිතර අසන ප්‍රශ්න</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          ඔබට තිබිය හැකි සාමාන්‍ය ප්‍රශ්න සඳහා පිළිතුරු.
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto space-y-6">
+        <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <button class="faq-toggle w-full flex justify-between items-center text-left">
+            <h3 class="text-xl font-semibold text-gray-800">ඉන්ටර්ලොක් ගල් කොපමණ කාලයක් පවතිනවාද?</h3>
+            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden mt-4">
+            <p class="text-gray-600">
+              හොඳින් ස්ථාපනය කර නඩත්තු කරන ලද ඉන්ටර්ලොක් ගල් අවම වශයෙන් වසර 20-25ක් පමණ පවතින අතර, බොහෝ විට ඊටත් වඩා කල් පවතී. ඒවා දිගුකාලීන ආයෝජනයක් ලෙස සලකනු ලැබේ.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="150">
+          <button class="faq-toggle w-full flex justify-between items-center text-left">
+            <h3 class="text-xl font-semibold text-gray-800">ඉන්ටර්ලොක් ගල් හා කොන්ක්‍රීට් අතර වෙනස කුමක්ද?</h3>
+            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden mt-4">
+            <p class="text-gray-600">
+              ඉන්ටර්ලොක් ගල් යනු වෙන් වෙන්ව හැසිරවිය හැකි ඒකක වන අතර, පහසුවෙන් මාරු කළ හැකිය. එය කොන්ක්‍රීට් වලට වඩා අලංකාරයි, වඩා බර දරාගත හැකියි. අලුත්වැඩියා කිරීම පහසුය.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <button class="faq-toggle w-full flex justify-between items-center text-left">
+            <h3 class="text-xl font-semibold text-gray-800">ඔබේ සේවාවට කුමක් ඇතුළත් වේද?</h3>
+            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden mt-4">
+            <p class="text-gray-600">
+              අපගේ සේවාවට උපදේශනය, නිර්මාණය, ද්‍රව්‍ය සැපයීම, පවතින භූමිය පිළියෙල කිරීම, ස්ථාපනය කිරීම සහ අවසන් පිරිසිදු කිරීම ඇතුළත් වේ. අපි සම්පූර්ණ සේවාවක් සපයමු.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="250">
+          <button class="faq-toggle w-full flex justify-between items-center text-left">
+            <h3 class="text-xl font-semibold text-gray-800">ඔබේ ඉන්ටර්ලොක් සේවාවට මිල කීයද?</h3>
+            <i class="fas fa-chevron-down text-primary transition-transform"></i>
+          </button>
+          <div class="faq-content hidden mt-4">
+            <p class="text-gray-600">
+              මිල ගණන් විවිධ සාධක මත රඳා පවතී - ප්‍රදේශයේ ප්‍රමාණය, යෝජිත නිර්මාණය, භාවිතා කරන ද්‍රව්‍ය සහ අවශ්‍ය යටිතල ව්‍යුහයන්. අපි නොමිලේ විස්තරාත්මක මිල ගණන් සපයමු.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-4 bg-primary relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-full h-full opacity-10">
+      <i class="fas fa-tools text-9xl absolute top-10 right-10"></i>
+      <i class="fas fa-hard-hat text-9xl absolute bottom-10 left-10"></i>
+    </div>
+    <div class="container mx-auto relative z-10">
+      <div class="max-w-4xl mx-auto text-center text-white" data-aos="zoom-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">ඔබේ ඉන්ටර්ලොක් ව්‍යාපෘතිය ගැන කතා කරමුද?</h2>
+        <p class="text-xl mb-8">
+          නොමිලේ මිල ගණන් සඳහා අපව අමතන්න. අපි ඔබගේ අදහස් ඉන්ටර්ලොක් යථාර්ථයක් බවට පත් කිරීමට උදව් කරමු.
+        </p>
+        <a href="#contact" class="bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition inline-block">
+          <i class="fas fa-phone-alt mr-2"></i> දැන් අමතන්න
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section py-24 px-4">
+    <div class="container mx-auto">
+      <div class="text-center mb-12" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">අපව අමතන්න</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          නොමිලේ මිල ගණන් හෝ යම් විමසීමක් සඳහා අපව අමතන්න.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+        <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg" data-aos="fade-right">
+          <h3 class="text-2xl font-semibold mb-6 text-gray-800">අමතන්න</h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fas fa-phone text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-1">දුරකථන අංකය</h4>
+                <a href="tel:+94718898371" class="text-lg text-primary font-semibold hover:underline">071 889 8371</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fab fa-whatsapp text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-1">WhatsApp</h4>
+                <a href="https://wa.me/94718898371" class="text-lg text-primary font-semibold hover:underline">071 889 8371</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fab fa-facebook text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-1">Facebook</h4>
+                <a href="https://www.facebook.com/gaminibandula.konara" target="_blank" class="text-lg text-primary font-semibold hover:underline">Konara Construction</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-primary bg-opacity-20 p-3 rounded-full mr-4">
+                <i class="fas fa-clock text-primary"></i>
+              </div>
+              <div>
+                <h4 class="font-medium text-gray-800 mb-1">වැඩ කරන වේලාවන්</h4>
+                <p class="text-gray-600">
+                  සඳුදා - සෙනසුරාදා: උදේ 8 සිට සවස 6 දක්වා<br>
+                  ඉරිදා: උදේ 9 සිට දවල් 1 දක්වා
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h4 class="font-medium text-gray-800 mb-4">සමාජ මාධ්‍ය</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="social-icon bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="#" class="social-icon bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                <i class="fab fa-telegram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-3 bg-white p-8 rounded-xl shadow-lg" data-aos="fade-left">
+            <h3 class="text-2xl font-semibold mb-6 text-gray-800">විමසීම් පෝරමය</h3>
+            <form id="contactForm" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">නම</label>
+                  <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="ඔබගේ නම" required>
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">දුරකථන අංකය</label>
+                  <input type="tel" id="phone" name="phone" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="07X XXX XXXX" required>
+                </div>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">ඊමේල් (විකල්ප)</label>
+                <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="ඔබගේ ඊමේල් ලිපිනය">
+              </div>
+              
+              <div>
+                <label for="service" class="block text-sm font-medium text-gray-700 mb-1">සේවාව</label>
+                <select id="service" name="service" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" required>
+                  <option value="">සේවාවක් තෝරන්න</option>
+                  <option value="Driveway Paving">Driveway Paving</option>
+                  <option value="Garden Paths / Walkways / Steps">Garden Paths / Walkways / Steps</option>
+                  <option value="Patios / Outdoor Areas">Patios / Outdoor Areas</option>
+                  <option value="Interlock ගල් සැපයීම">Interlock ගල් සැපයීම</option>
+                  <option value="Installation Service">Installation Service</option>
+                  <option value="Repair / Maintenance">Repair / Maintenance</option>
+                  <option value="Other">වෙනත්</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">පණිවිඩය</label>
+                <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" placeholder="ඔබගේ අවශ්‍යතා ගැන විස්තර සපයන්න"></textarea>
+              </div>
+              
+              <button type="submit" id="submitBtn" class="bg-primary hover:bg-amber-600 text-white px-8 py-3 rounded-full transition-colors shadow-lg w-full md:w-auto">
+                <i class="fas fa-paper-plane mr-2"></i> පණිවිඩය යවන්න
+              </button>
+            </form>
+          
+            <!-- Success message (hidden by default) -->
+            <div id="successMessage" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+              <p><i class="fas fa-check-circle mr-2"></i> ඔබගේ පණිවිඩය සාර්ථකව ලැබුණි. අපි ඉක්මනින් ඔබ අමතන්නෙමු.</p>
+            </div>
+          </div>
+          
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const contactForm = document.getElementById('contactForm');
+              const successMessage = document.getElementById('successMessage');
+              
+              // WhatsApp business phone number (with country code)
+              const whatsappNumber = '94718898371'; // Replace with your actual WhatsApp business number
+              
+              contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value || 'Not provided';
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value || 'Not provided';
+                
+                // Form validation
+                if (!name || !phone || !service) {
+                  alert('කරුණාකර අවශ්‍ය තොරතුරු සපයන්න (Please fill in all required fields)');
+                  return;
+                }
+                
+                // Compose WhatsApp message
+                const whatsappMessage = `New Inquiry from Website:%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Service Requested:* ${service}%0A*Message:* ${message}`;
+                
+                // Create WhatsApp link
+                const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+                
+                // Show success message
+                successMessage.classList.remove('hidden');
+                
+                // Redirect to WhatsApp after a short delay (1.5 seconds)
+                setTimeout(function() {
+                  window.open(whatsappLink, '_blank');
+                }, 1500);
+                
+                // Reset form
+                contactForm.reset();
+              });
+            });
+          </script>
+      </div>
+    </div>
+  </section>
+
+ 
+
+
+<!-- Footer completion -->
+<footer class="bg-gray-900 text-white py-12 px-4">
+    <div class="container mx-auto">
+      <!-- Location Map Section (Added) -->
+      <div class="mb-10 w-full">
+        <h3 class="text-xl font-semibold mb-4 text-center">අපේ ස්ථානය (Our Location)</h3>
+        <div class="w-full h-64 rounded-lg overflow-hidden">
+          <!-- Replace the src with your actual Google Maps embed URL with your business location -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d588.0558458742228!2d80.31958711574292!3d7.470506408326998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae33b0e1652b10f%3A0xc4fd1279719f2d36!2sKonara%20Cement%20Products%20%26%20Construction!5e0!3m2!1sen!2slk!4v1744315805011!5m2!1sen!2slk"
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <div class="text-2xl font-bold mb-6 flex items-center">
+            <i class="fas fa-hard-hat mr-2 text-primary"></i>
+            Konara Construction
+          </div>
+          <p class="text-gray-400 mb-6">
+            උසස්ම තත්වයේ ඉන්ටර්ලොක් සේවාවන් සපයමින් ඔබේ පරිශ්‍රය අලංකාර කරන්න.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-primary transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-primary transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-primary transition">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-primary transition">
+              <i class="fab fa-telegram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold mb-6">අපේ සේවාවන්</h3>
+          <ul class="space-y-3">
+            <li><a href="#services" class="text-gray-400 hover:text-primary transition">Driveway Paving</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-primary transition">Garden Paths / Walkways</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-primary transition">Patios / Outdoor Areas</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-primary transition">Interlock ගල් සැපයීම</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-primary transition">Installation Service</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-primary transition">Repair / Maintenance</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold mb-6">කෙටි මාර්ග</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-400 hover:text-primary transition">මුල් පිටුව</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-primary transition">අපි ගැන</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-primary transition">සේවාවන්</a></li>
+            <li><a href="#gallery" class="text-gray-400 hover:text-primary transition">ගැලරිය</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-primary transition">අපව අමතන්න</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold mb-6">සම්බන්ධ වන්න</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center">
+              <i class="fas fa-phone mr-3 text-primary"></i>
+              <a href="tel:+94771234567" class="text-gray-400 hover:text-primary transition">077 123 4567</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fab fa-whatsapp mr-3 text-primary"></i>
+              <a href="https://wa.me/94771234567" class="text-gray-400 hover:text-primary transition">077 123 4567</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-3 text-primary"></i>
+              <a href="mailto:info@konaraconstruction.lk" class="text-gray-400 hover:text-primary transition">info@konaraconstruction.lk</a>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-3 text-primary"></i>
+              <span class="text-gray-400">කොළඹ, ගම්පහ, කළුතර</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="border-gray-700 my-8">
+      
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">
+          &copy; 2025 Konara Construction. සියලුම හිමිකම් ඇවිරිණි.
+        </p>
+        <div class="mt-4 md:mt-0">
+          <ul class="flex space-x-6">
+            <li><a href="#" class="text-gray-400 hover:text-primary text-sm transition">Terms of Service</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-primary text-sm transition">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  <!-- JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script>
+    // Initialize AOS Animation
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+    
+    // Mobile Menu Toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    
+    // FAQ Toggles
+    document.querySelectorAll('.faq-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        const icon = this.querySelector('i');
+        
+        content.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+      });
+    });
+    
+    // Header Scroll Effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      const scrollTop = window.scrollY;
+      
+      if (scrollTop > 100) {
+        header.classList.add('py-2');
+        header.classList.remove('py-3');
+      } else {
+        header.classList.add('py-3');
+        header.classList.remove('py-2');
+      }
+      
+      // Scroll to Top Button Visibility
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      if (scrollTop > 300) {
+        scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+        scrollToTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollToTopBtn.classList.add('opacity-0', 'invisible');
+        scrollToTopBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+    
+    // Scroll to Top Functionality
+    document.getElementById('scrollToTop').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // Close mobile menu if it's open
+          document.getElementById('mobile-menu').classList.add('hidden');
+          
+          // Scroll to the target
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Adjust for header height
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
